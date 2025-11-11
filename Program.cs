@@ -12,6 +12,7 @@ using AprendizadoVerticalSlice.Funcionalidades.Produtos.ExcluirProduto;
 // Importações para os Handlers de Categorias
 using AprendizadoVerticalSlice.Funcionalidades.Categorias.ObterTodasCategorias;
 using AprendizadoVerticalSlice.Funcionalidades.Categorias.CriarCategoria;
+using AprendizadoVerticalSlice.Funcionalidades.Categorias.ObterCategoriaPorId;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,7 @@ builder.Services.AddScoped<ExcluirProdutoHandler>();
 // Registro dos Handlers de Categorias
 builder.Services.AddScoped<ObterTodasCategoriasHandler>();
 builder.Services.AddScoped<CriarCategoriaHandler>();
+builder.Services.AddScoped<ObterCategoriaPorIdHandler>();
 
 var app = builder.Build();
 
@@ -69,5 +71,6 @@ app.MapExcluirProduto();
 // Mapeamento dos endpoints de Categorias
 app.MapObterTodasCategorias();
 app.MapCriarCategoria();
+app.MapObterCategoriaPorId();
 
 app.Run();
